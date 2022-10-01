@@ -1,0 +1,29 @@
+
+<div class="container mt-5 ml-4 text-center justify-content-center">
+  <app-spinner  *ngIf="!this.actores"></app-spinner>
+  <table class="table table-dark table-hover text-center overflow-auto" *ngIf="this.actores">
+
+    <thead>
+      <h2>Actores:</h2>
+    <tr>
+      <th><strong>Nombre</strong></th>
+      <th><strong>Apellido</strong></th>
+
+    </tr>
+  </thead>
+    <tbody>
+    <tr  *ngFor="let actor of this.actores"  style="cursor:pointer" (click)="seleccionarActor(actor)">
+      <td>{{actor.nombre}}</td>
+      <td>{{actor.apellido}}</td>
+     <!-- <td> <img src="{{actor.bandera}}" width="80" height="60"> </td>-->
+
+    </tr>
+
+
+  </tbody>
+
+
+    </table>
+
+
+</div>

@@ -1,0 +1,27 @@
+<h2>Detalle de la Pelicula:</h2>
+<table>
+<tbody *ngIf="this.peliculaDetallada" >
+
+  <tr>
+    <td class="text-center"><strong>{{this.peliculaDetallada.nombre}}</strong> </td>
+  </tr>
+  <tr>
+    <td> <img src={{this.peliculaDetallada.fotoPelicula}} width="300" height="200"> </td>
+  </tr>
+  <tr>
+    <strong> Tipo: {{this.peliculaDetallada.tipo }}</strong>
+  </tr>
+  <tr>
+    <strong> Fecha de estreno: {{this.peliculaDetallada.fechaDeEstreno}}</strong>
+  </tr>
+  <tr>
+    <strong> Cantidad de público: {{this.peliculaDetallada.cantidadDePublico }}</strong>
+  </tr>
+
+
+
+</tbody>
+
+
+
+</table>

@@ -1,0 +1,7 @@
+<div *ngIf="this.peliculasActuadas.length>0">
+  <h4>Peliculas en las que participa:</h4>
+  <ul  *ngFor="let item of this.peliculasActuadas">
+  <li><strong>{{item.nombre}}</strong></li>
+  <img src="{{item.fotoPelicula}}" width="60px" height="50px" alt="">
+</ul>
+</div>

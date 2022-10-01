@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="py-5 text-center">
+
+    <h2 class="mt-4">Ingresa Pelicula</h2>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+<!--  atrapo el eventoActorSeleccionado -->
+      <app-actor-listado (eventoActorSeleccionado)="actorSeleccionado($event)"></app-actor-listado>
+
+
+    </div>
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Datos del actor:</h4>
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            Nombre de pelicula:<input type="text" class="form-control" [(ngModel)]="this.pelicula.nombre" placeholder="Ingrese nombre" name="nombre" required>
+            <div class="invalid-feedback">
+              El nombre es requerido
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+
+            Tipo:<br><select class="form-control" aria-label="Default select example" name="tipo" (change)="capturarSeleccion($event)">
+
+            <option *ngFor="let item of tipos()">{{item}} </option>
+
+            </select>
+
+          </div>
+        </div>
+
+        <div class="mb-3">
+          Fecha:<input type="text" class="form-control" id="dni" name="fechaDeEstreno" [(ngModel)]="this.pelicula.fechaDeEstreno" placeholder="Ingrese fecha">
+          <div class="invalid-feedback">
+            Fecha es requerida
+          </div>
+        </div>
+
+        <div class="mb-3">
+          Cantidad de público:<input type="text" class="form-control" placeholder="Ingrese cantidad" name="cantidadDePublico" [(ngModel)]="this.pelicula.cantidadDePublico" placeholder="">
+          <div class="invalid-feedback">
+            Cantidad requerida
+          </div>
+        </div>
+
+        <div class="mb-3">
+          Actor: <small *ngIf="this.pelicula.actor">
+           <strong> {{this.pelicula.actor.apellido}}, {{this.pelicula.actor.nombre}} </strong>
+      &nbsp;      <img [src]="this.pelicula.actor.pais.flag" width="20px" height="20px">
+          </small>
+        </div>
+
+        <div class="mb-3">
+          Foto:<input type="file" class="form-control"  (change)="imagenSubida($event)" name="fotoPelicula" [(ngModel)]="this.pelicula.fotoPelicula" placeholder="">
+
+        </div>
+
+
+
+
+
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" (click)="agregarPelicula()">Agregar pelicula</button>
+      </form>
+    </div>
+  </div>
+
+
+</div>

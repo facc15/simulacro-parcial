@@ -1,0 +1,45 @@
+<main role="main">
+  <!--Capturo el evento             -                mando al input de tabla-pelicula el array -->
+
+    <app-tabla-pelicula (eventoPeliculaElegida)="this.peliculaElegida($event)" [listaPelis]="this.peliculas"></app-tabla-pelicula>
+
+
+
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+    <!--mando la pelicula elegida a detallepelicula  -->
+        <app-detalle-pelicula [peliculaDetallada]="this.peliculaADetallar"></app-detalle-pelicula>
+      </div>
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Playing ping pong all night long, everything's all neon and hazy. Yeah, she's so in demand. She's sweet as pie but if you break her heart. But down to earth. It's time to face the music I'm no longer your muse. I guess that I forgot I had a choice.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>&copy; Company 2017-2022</p>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+

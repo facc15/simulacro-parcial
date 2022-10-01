@@ -1,0 +1,27 @@
+
+
+<div class="text-center justify-content-center">
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+  <span class="text-primary" style="text-align: center;">Elegir país:</span>
+  <span class="badge bg-primary rounded-pill">
+    {{ this.paises?.length }}
+  </span>
+</h4>
+<app-spinner *ngIf="!this.paises"></app-spinner>
+<ul class="list-group mb-3 overflow-auto"  style="height: 391px">
+  <li class="list-group-item d-flex justify-content-between lh-sm" style="cursor: pointer"
+    *ngFor="let pais of this.paises" (click)="seleccionarPais(pais)">
+    <div>
+      <h6 class="my-0">{{ pais.name }}</h6>
+      <small class="text-muted">{{ pais.nativeName }}</small>
+    </div>
+    <img
+      [src]="pais.flag"
+      alt="bandera del pais"
+      width="60px"
+      height="40px"
+    />
+  </li>
+
+</ul>
+</div>
